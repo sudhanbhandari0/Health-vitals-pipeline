@@ -37,7 +37,7 @@ def train_model_task(train_csv: str, scaler_path: str, models_dir: str):
         train_csv=train_csv,
         scaler_path=scaler_path,
         model_dir=models_dir,
-        cfg=TrainingConfig(epochs=20)  # adjust if needed
+        cfg=TrainingConfig(epochs=5)  # adjust if needed
     )
     logger.info(f"Saved model: {result['model_path']}")
     logger.info(f"Threshold: {result['threshold']:.6f}")
@@ -56,8 +56,8 @@ def batch_score_task(train_csv: str, eval_csv: str, models_dir: str, out_csv: st
 @flow(name="vitals_flow")
 def vitals_flow():
     project_root = Path(__file__).resolve().parents[1]
-    train_csv  = project_root / "data" / "raw_vitals_normal.csv"
-    eval_csv   = project_root / "data" / "new_day_with_anomalies_groundtruth.csv"
+    train_csv  = project_root / "data" / "training_data_normal_only.csv"
+    eval_csv   = project_root / "data" / "evaluation_data_human_vitals.csv"
     models_dir = project_root / "models"
     scored_csv = project_root / "data" / "scored" / "scored.csv"
 

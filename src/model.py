@@ -144,7 +144,7 @@ def train_autoencoder(
         avg_loss = train_one_epoch(model, optimizer, criterion, loader)
 
     errs = reconstruction_errors(model, X_scaled)
-    th = percentile_threshold(errs, 99.5)
+    th = percentile_threshold(errs, 90.5)
 
     models_dir = Path(model_dir)
     model_path = save_model(model, models_dir)
