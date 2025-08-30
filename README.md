@@ -26,6 +26,7 @@ CSV Files StandardScaler Neural Network Percentile-based Scored Results
 
 ## 📁 Project Structure
 
+```bash
 Health-vitals-pipeline/
 ├── src/                      # Core source code
 │   ├── data.py              # Data loading and preprocessing utilities
