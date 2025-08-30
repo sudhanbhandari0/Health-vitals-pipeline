@@ -27,20 +27,24 @@ CSV Files StandardScaler Neural Network Percentile-based Scored Results
 ## 📁 Project Structure
 
 Health-vitals-pipeline/
-├── src/
-│ ├── data.py # Data loading and preprocessing
-│ ├── model.py # Autoencoder model and training
-│ ├── eval.py # Evaluation and scoring
-│ └── pipeline.py # Prefect workflow orchestration
-├── data/
-│ ├── .zip # Dataset archives (see Data section)
-│ └── scored/ # Auto-generated results
-├── models/ # Saved model artifacts
-│ ├── autoencoder.pt # Trained model weights
-│ ├── scaler.joblib # Fitted StandardScaler
-│ └── threshold.json # Anomaly detection threshold
-├── requirements.txt # Python dependencies
-└── README.md # This file
+├── src/                      # Core source code
+│   ├── data.py              # Data loading and preprocessing utilities
+│   ├── model.py             # Autoencoder model definition and training
+│   ├── eval.py              # Evaluation and anomaly scoring logic
+│   └── pipeline.py          # Prefect workflow orchestration
+│
+├── data/                     # Dataset-related files
+│   ├── .zip                 # Dataset archives (see Data section)
+│   └── scored/              # Auto-generated results after scoring
+│
+├── models/                   # Saved model artifacts
+│   ├── autoencoder.pt       # Trained autoencoder weights
+│   ├── scaler.joblib        # Fitted StandardScaler for normalization
+│   └── threshold.json      # Anomaly detection threshold value
+│
+├── requirements.txt          # Python dependencies
+└── README.md                # Project documentation
+
 
 
 ## Configuration Information
